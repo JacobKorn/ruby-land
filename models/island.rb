@@ -1,5 +1,6 @@
 require_relative "location"
 require_relative "../ruby-land"
+
 class Island
   attr_reader :locations
   def initialize
