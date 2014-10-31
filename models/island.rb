@@ -1,5 +1,4 @@
 require_relative "location"
-require_relative "../ruby-land"
 
 class Island
   attr_reader :locations
@@ -9,16 +8,4 @@ class Island
     all_locations.each {|location, gem| @locations << Location.new(location, gem)}
   end
 end
-
-
-
-
-
-
-
-
-
-island = Island.new
-p island.locations
-
 
