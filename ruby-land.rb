@@ -14,7 +14,7 @@ class RubyLand
   def run
     until @player_ctrl.player_gems.length == 5
       @island_ctrl.show_locations
-      @player.move_to_location(@island_ctrl.get_destination)
+      @player_ctrl.move_to_location(@island_ctrl.get_destination)
     end
     @view.won
   end

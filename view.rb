@@ -40,8 +40,8 @@ class View
 
 	def show_locations(locations)
 		puts "Here are the places you can travel to:"
-		puts locations
-		puts "type in a location to travel there"		
+		puts locations.map { |location| location.location_name}
+		puts "type in a location to travel there"
 	end
 
 	def get_destination
@@ -88,6 +88,4 @@ class View
 
 	end
 end
-
-test = View.new
 
