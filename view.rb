@@ -1,6 +1,3 @@
-#require_relative "../models/island"
-#require_relative "player"
-
 class View
 
 	attr_reader :go_to
@@ -19,28 +16,28 @@ class View
 		puts ""
 		puts "To play, pick one of the following locations to complete game and add a gem to your bag!"
 		puts "Once you get 5 gems, trade them in for a ruby and win the game :)"
-		puts "         ____ /\\ ____            _ _   --           - -__     -_                                         "
-		# puts "        /v y \\/\\/    \\                   --  --___     _ __--__ -  _                                   "
-		# puts "       ____\\7 \\\\_^\_^\/ \\                            _ --        -_ \"-_                                 "
-		# puts "      /    V/ \\/   \\ ^\/\\            __                          _--,_                                  "
-		# puts "     / \\^\\|/ \\()^\7_ \\ ^\|      /"\>^\/"\,,\\                        /"\(\"\\\"\\                             "
-		# # puts "    /\\^   / \\^_() 7_\\        </">LX<"<,\\                    _/"/"|\\ )\\>_                            "
-		# # puts "    |^    /\\ ()_|  7|        / >/ >O-,\\"                 _/"_." _/ / / \\"\\                            "
-		# # puts "          ^   \\_\\            ^" V"O^  V               /""_-" ,/"  /\\  \\ ) "-,_                        "
-		# # puts "               \\_\\              '  \\>              _-"/ ( .-/ \\ !   )  \\ _\\"-_"\\_                  "
-		# # puts " ___ ___ ______ \\_\\ _ _____ ___ ___ \\> _ ___   _-"/_-"   / (    |  / \\  | \\  \\_- "-_  __ _ _        "
-		# # puts "       _  _ _-   \\_\\   --  -   - --  \\">   -<_"__" /  _/|   \\ \\ | /! \\  \\  -_( _"-<_">-- -         "
-		# # puts "              --  \\_`>    _--    _ ___",">-____ _"> ""_" "--"--"-" "-"' "-"  '"  _                       "
-		# # puts "                   \\__">      C"" -_O   "O-'           '">        __ -  -                                "
-		# # puts "  jjs    _ __()_ ___"-__"\\__ __)    - O         __ - - "      - -                                        "
-		# # puts "                ()   _">--"> _ .-- "      - """                                                           "
-		# # puts "                        """                                                                               "
+		puts "         ____ /\\ ____            _ _   --           - -__     -_                        "
+		puts "        /v y \\/\\/    \\                   --  --___     _ __--__ -  _                  "
+		puts "       ____\\7 \\\\_\^_\^/ \\                            _ --        -_ \"-_               "
+		puts "      /    V/ \\/   \\ \^/\\            __                          _--,_                   "
+		puts "     / \\\^\\|/ \\()\^7_ \\ \^|      /\">\^/\",,\\                        /\"(\"\\\"\\       "
+		puts "    /\\\^   / \\\^_() 7_\\        \</\">LX<\"\<,\\                    _/\"/\"|\\ )\\\>_       "
+		puts "    |\^    /\\ ()_|  7|        / \>/ \>O-,\\\"                 _/\"_.\" _/ / / \\\"\\        "
+		puts "          \^   \\_\\            \^\" V\"O\^  V               /\"\"_-\" ,/\"  /\\  \\ ) \"-,_  "
+		puts "               \\_\\              '  \\\>              _-\"/ ( .-/ \\ !   )  \\ _\\\"-_\"\\_  "
+		puts " ___ ___ ______ \\_\\ _ _____ ___ ___ \\\> _ ___   _-\"/_-\"   / (    |  / \\  | \\  \\_- \"-_  __ _ _"
+		puts "       _  _ _-   \\_\\   --  -   - --  \\\"\>   -\<_\"__\" /  _/|   \\ \\ | /! \\  \\  -_( _\"-\<_\"\>-- -"
+		puts "              --  \\_`\>    _--    _ ___\",\"\>-____ _\"\> \"\"_\" \"--\"--\"-\" \"-\"\' \"-\"  \'\"  _"
+		puts "                   \\__\"\>      C\"\" -_O   \"O-\'           \'\"\>        __ -  -                   "
+		puts "  jjs    _ __()_ ___\"-__\"\\__ __)    - O         __ - - \"      - -                                 "
+		puts "                ()   _\"\>--\"\> _ .-- \"      - \"\"\"                                             "
+		puts "                        \"\"\"                                                                   "
 
 	end
 
 	def show_locations(locations)
 		puts "Here are the places you can travel to:"
-		puts locations
+		puts locations.map {|location| location.location_name}
 		puts "type in a location to travel there"		
 	end
 
@@ -53,9 +50,15 @@ class View
 	end
 
 	def print_gems(gem_array)
-
 		puts "here are your gems so far: "
 		puts gem_array
+		gem_array.length.times do
+			puts "  ____"
+			puts " /\\__/\\"
+			puts "/_/  \\_\\"
+			puts "\\ \\__/ /"
+ 			puts " \\/__\\/"
+ 		end
 	end
 
 	def display_location(location)
@@ -88,6 +91,3 @@ class View
 
 	end
 end
-
-test = View.new
-
