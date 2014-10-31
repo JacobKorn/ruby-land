@@ -16,6 +16,7 @@ class RubyLand
       @island_ctrl.show_locations
       @player.move_to_location(@island_ctrl.get_destination)
     end
+    @view.won
   end
 
 end
