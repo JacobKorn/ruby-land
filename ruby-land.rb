@@ -10,7 +10,12 @@ class RubyLand
 
   def run
 
-  end
+    until player has 5 gems
+      # title screen displayed when narrative_ctrl initialized
+      @narrative_ctrl.start
 
+    end
+
+  end
 
 end
