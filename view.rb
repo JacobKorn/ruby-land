@@ -5,6 +5,7 @@ class View
 	attr_reader :go_to
 
 	def initialize
+		clear_screen
 		puts ""
 		puts "                                        Welcome to                     "
 		puts "                     _____       _             _                     _ "

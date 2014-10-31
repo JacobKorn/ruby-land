@@ -3,7 +3,6 @@ require_relative 'controllers/island_controller'
 require_relative 'controllers/player_controller.rb'
 
 class RubyLand
-
   def initialize
     @view = View.new
     @island_ctrl = IslandController.new(@view)
@@ -12,6 +11,7 @@ class RubyLand
   end
 
   def run
+
     until @player_ctrl.player_gems.length == 5
       @island_ctrl.show_locations
       @player_ctrl.move_to_location(@island_ctrl.get_destination)
