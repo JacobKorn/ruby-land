@@ -1,3 +1,5 @@
+require 'pp'
+
 class View
 
 	attr_reader :go_to
@@ -35,6 +37,10 @@ class View
 
 	end
 
+	def clear_screen
+		print "\e[2J"
+	end
+
 	def show_locations(locations)
 		puts "Here are the places you can travel to:"
 
@@ -53,28 +59,79 @@ class View
 
 	def print_gems(gem_array)
 		puts "here are your gems so far: "
-		puts gem_array
-		gem_array.length.times do
+		gem_array.each do |gem|
+			puts ""
+			puts gem
 			puts "  ____"
 			puts " /\\__/\\"
 			puts "/_/  \\_\\"
 			puts "\\ \\__/ /"
  			puts " \\/__\\/"
- 		end
+ 			puts ""
+		end
+		# gem_array.length.times do
+		# 	puts "  ____"
+		# 	puts " /\\__/\\"
+		# 	puts "/_/  \\_\\"
+		# 	puts "\\ \\__/ /"
+ 	# 		puts " \\/__\\/"
+ 	# 	end
 	end
 
 	def display_location(location)
-		case location
+		case location.location_name
 		when "Volcano"
-			puts "You have arrived at a firey volcano! Complete the game to add a gem to your pack!"
+			puts "
+:::      .::.  ...      :::       .,-:::::   :::.   :::.    :::.    ...      .:
+';;,   ,;;;'.;;;;;;;.   ;;;     ,;;;'````'   ;;`;;  `;;;;,  `;;; .;;;;;;;.  ;;;
+ \\[[  .[[/ ,[[     \\[[, [[[     [[[         ,[[ \'[[,  [[[[[. '[[,[[     \\[[,\'[[
+  Y$c.$$\"  $$$,     $$$ $$\'     $$$        c$$$cc$$$c $$$ \"Y$c$$$$$,     $$$ $$
+   Y88P    \"888,_ _,88Po88oo,.__\`88bo,__,o, 888   888,888    Y88\"888,_ _,88P \"\"
+    MP       \"YMMMMMP\" \"\"\"\"YUMMM  \"YUMMMMMP\"YMM   \"\"\` MMM     YM  \"YMMMMMP\"  MM"
+    puts
+			puts "You have arrived at a fiery volcano! You find a gem and add it to your pack!"
 		when "Beach"
-			puts "Surf's up at the beach! Complete the game to add a gem to your pack!"
+
+			puts "db       .d8b.    d8888b. d88888b  .d8b.   .o88b. db   db "
+			puts "88      d8\' \`8b   88  \`8D 88\'     d8\' \`8b d8P  Y8 88   88 "
+			puts "88      88ooo88   88oooY\' 88ooooo 88ooo88 8P      88ooo88 "
+			puts "88      88~~~88   88~~~b. 88~~~~~ 88~~~88 8b      88~~~88 "
+			puts "88booo. 88   88   88   8D 88.     88   88 Y8b  d8 88   88 "
+			puts "Y88888P YP   YP   Y8888P\' Y88888P YP   YP  \`Y88P\' YP   YP "
+			puts ""
+			puts "Surf's up at the beach! After having a swim, you find a gem :)"
 		when "Village"
-			puts "You've just arrived at the island village. Complete the game to get a new gem"
+			puts "
+  _______ _                  __    __    .    .
+ '   /    /        ___       |     |  `  |    |     ___    ___.   ___
+     |    |,---. .'   `       \\    /  |  |    |    /   ` .'   ` .'   `
+     |    |'   ` |----'        \\  /   |  |    |   |    | |    | |----'
+     /    /    | `.___,         \\/    / /\\__ /\\__ `.__/|  `---| `.___,
+                                                          \\___/ "
+			puts "You've just arrived at the island village and bought a new gem!"
 		when "Cave"
-			puts "oooOOOOooooo you have entered a spooky cave... get through the game to collect a gem and get outta here!"
+			puts " .oOOOo.
+.O     o
+o
+o
+o         .oOoO\' \`o   O .oOo.
+O         O   o   O   o OooO\'
+\`o     .o o   O   o  O  O
+ \`OoooO\'  \`OoO\'o  \`o\'   \`OoO\' "
+  		puts ""
+			puts "oooOOOOooooo you have entered a spooky cave and searched the depths to find a gem"
 		when "Jungle"
-			puts "In the depth of the jungle you've found a new game! Complete it "
+			puts "
+     O))                           O))
+     O))                           O))
+     O))O))  O))O)) O))     O))    O))   O))
+     O))O))  O)) O))  O)) O))  O)) O)) O)   O))
+     O))O))  O)) O))  O))O))   O)) O))O))))) O))
+O)   O))O))  O)) O))  O)) O))  O)) O))O)
+ O))))    O))O))O)))  O))     O)) O)))  O))))
+                           O))  "
+			puts ""
+			puts "In the depth of the jungle you've found a new gem! "
 		end
 	end
 
@@ -92,9 +149,5 @@ class View
 		puts "                          \\/                "
 
 	end
-<<<<<<< HEAD
-end
 
-=======
 end
->>>>>>> master

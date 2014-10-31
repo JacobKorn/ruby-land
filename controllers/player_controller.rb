@@ -7,11 +7,12 @@ class PlayerController
   end
 
   def move_to_location(location)
+    @view.clear_screen
     @player.move_to_location(location)
     collect_gem(location)
     @view.you_got_a_gem(@player.newest_gem)
-    @view.print_gems(@player.collected_gems)
     @view.display_location(location)
+    @view.print_gems(@player.collected_gems)
   end
 
 

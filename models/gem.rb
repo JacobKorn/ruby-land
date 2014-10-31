@@ -4,7 +4,7 @@ class Gemm
     @gem_name = gem_name
   end
 
-  # def to_s
-  #   @gem_name
-  # end
+  def to_s
+    @gem_name
+  end
 end
